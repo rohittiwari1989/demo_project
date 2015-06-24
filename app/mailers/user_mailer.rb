@@ -1,0 +1,23 @@
+class UserMailer < ActionMailer::Base
+
+  # Subject can be set in your I18n file at config/locales/en.yml
+  # with the following lookup:
+  #
+  #   en.user_mailer.account_activation.subject
+  #
+  def account_activation(user)
+    @user = user
+    mail from: "noreply@example.com", to: user.email, subject: "Account Activation"
+  end
+
+  # Subject can be set in your I18n file at config/locales/en.yml
+  # with the following lookup:
+  #
+  #   en.user_mailer.password_reset.subject
+  #
+  def password_reset(user)
+    @user = user
+
+    mail from: "noreply@example.com", to: user.email, subject: "Passwoed Reset"
+  end
+end
